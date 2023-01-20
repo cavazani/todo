@@ -1,3 +1,4 @@
+import { Todo } from './../Models/todo.model';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,20 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public todos: any[] = []; // vazio
+  public todos: Todo[] = []; // vazio
   //public todos: any[]; // undefined
+  public title: String ='Minhas Tarefas';
 
   /**
    *
    */
   constructor() {
-    this.todos.push('teste 1');
-    this.todos.push('teste 2');
-    this.todos.push('teste 3');
-    this.todos.push(0);
-    this.todos.push(1999);
-    this.todos.push({message:'teste 3'});
-    this.todos.push(new Date);
+    this.todos.push(new Todo(1,'Acordar', false));
+    this.todos.push(new Todo(2,'Trabalhar', false));
+    this.todos.push(new Todo(3,'Estudar', true));
 
+  }
+
+  alterarTexto(){
+    this.title = 'Teste';
   }
 }
