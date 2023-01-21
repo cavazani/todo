@@ -7,8 +7,8 @@
   <li *ngFor="let todo of todos">
 
     {{todo.id}}.{{todo.title}}.{{todo.done}} -
-    <button *ngIf="!todo.done"> Concluir </button> |
-    <button *ngIf="todo.done"> Remover </button>
+    <button *ngIf="!todo.done" (click)="marcarComoConcluido(todo)"> Concluir </button> |
+    <button *ngIf="todo.done" (click)="marcarComoNaoConcluido(todo)"> Remover </button>
     <button (click)="remove(todo)"> Remover </button>
   </li>
 </ul>

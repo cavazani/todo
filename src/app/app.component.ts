@@ -29,12 +29,12 @@ export class AppComponent {
   }
  }
 
- marcarComoConcluido(){
-
+ marcarComoConcluido(todo: Todo) {
+  todo.done = true;
  }
 
- marcarComoNaoConcluido(){
-
+ marcarComoNaoConcluido(todo: Todo){
+  todo.done = false;
  }
 
 
