@@ -11,7 +11,7 @@ export class AppComponent {
   public todos: Todo[] = []; // vazio
   //public todos: any[]; // undefined
   public title: String ='Minhas Tarefas';
-  public form!: FormGroup;
+  public form: FormGroup;
 
   /**
    *
