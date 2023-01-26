@@ -26,7 +26,7 @@ export class AppComponent {
       ])]
     })
 
-
+    this.load();
 
     // this.todos.push(new Todo(1,'Acordar', false));
     // this.todos.push(new Todo(2,'Trabalhar', false));
@@ -52,14 +52,18 @@ clear(){
   if(index !== -1){
     this.todos.splice(index, 1);
   }
+  this.save();
  }
 
  marcarComoConcluido(todo: Todo) {
   todo.done = true;
+  this.save();
+  this.save();
  }
 
  marcarComoNaoConcluido(todo: Todo){
   todo.done = false;
+  this.save();
  }
 
 
@@ -73,7 +77,9 @@ clear(){
     localStorage.setItem('todos', data);
   }
 
-
+ load(){
+  this.todos = JSON.parse(localStorage.getItem('todos') || '{}');
+}
 
 }
 
